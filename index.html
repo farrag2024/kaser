@@ -286,22 +286,96 @@
                         <td>${row.id}</td>
                         <td><input type="text" class="cl_num" value="${row.cl_num}" id="cl_num_${row.id}" readonly></td>
                         <td><input type="text" class="student-name" value="${row.student_name}" id="student_name_${row.id}" readonly></td>
-                        <td><input type="number" value="${row.aslm}" id="aslm_${row.id}" data-original="${row.aslm}" min="0" max="35" onkeypress="return event.charCode >= 48"></td>
-                        <td><input type="number" value="${row.arb}" id="arb_${row.id}" data-original="${row.arb}" min="0" max="35" onkeypress="return event.charCode >= 48"></td>
-                        <td><input type="number" value="${row.math}" id="math_${row.id}" data-original="${row.math}" min="0" max="35" onkeypress="return event.charCode >= 48"></td>
-                        <td><input type="number" value="${row.since}" id="since_${row.id}" data-original="${row.since}" min="0" max="35" onkeypress="return event.charCode >= 48"></td>
-                        <td><input type="number" value="${row.drasa}" id="drasa_${row.id}" data-original="${row.drasa}" min="0" max="35" onkeypress="return event.charCode >= 48"></td>
-                        <td><input type="number" value="${row.eng}" id="eng_${row.id}" data-original="${row.eng}" min="0" max="35" onkeypress="return event.charCode >= 48"></td>
-                        <td><input type="number" value="${row.fyz}" id="fyz_${row.id}" data-original="${row.fyz}" min="0" max="35" onkeypress="return event.charCode >= 48"></td>
-                        <td><input type="number" value="${row.kims}" id="kims_${row.id}" data-original="${row.kims}" min="0" max="35" onkeypress="return event.charCode >= 48"></td>
-                        <td><input type="number" value="${row.ahya}" id="ahya_${row.id}" data-original="${row.ahya}" min="0" max="35" onkeypress="return event.charCode >= 48"></td>
+                     <td>
+    <input type="number" 
+           value="${row.aslm}" 
+           id="aslm_${row.id}" 
+           data-original="${row.aslm}" 
+           min="0" 
+           max="35" 
+           oninput="if (this.value.length > 2) { alert('يرجى إدخال رقم مكون من رقمين كحد أقصى.'); this.value = this.value.slice(0, 2); }">
+</td>
+<td>
+    <input type="number" 
+           value="${row.arb}" 
+           id="arb_${row.id}" 
+           data-original="${row.arb}" 
+           min="0" 
+           max="35" 
+           oninput="if (this.value.length > 2) { alert('يرجى إدخال رقم مكون من رقمين كحد أقصى.'); this.value = this.value.slice(0, 2); }">
+</td>
+<td>
+    <input type="number" 
+           value="${row.math}" 
+           id="math_${row.id}" 
+           data-original="${row.math}" 
+           min="0" 
+           max="35" 
+           oninput="if (this.value.length > 2) { alert('يرجى إدخال رقم مكون من رقمين كحد أقصى.'); this.value = this.value.slice(0, 2); }">
+</td>
+<td>
+    <input type="number" 
+           value="${row.since}" 
+           id="since_${row.id}" 
+           data-original="${row.since}" 
+           min="0" 
+           max="35" 
+           oninput="if (this.value.length > 2) { alert('يرجى إدخال رقم مكون من رقمين كحد أقصى.'); this.value = this.value.slice(0, 2); }">
+</td>
+<td>
+    <input type="number" 
+           value="${row.drasa}" 
+           id="drasa_${row.id}" 
+           data-original="${row.drasa}" 
+           min="0" 
+           max="35" 
+           oninput="if (this.value.length > 2) { alert('يرجى إدخال رقم مكون من رقمين كحد أقصى.'); this.value = this.value.slice(0, 2); }">
+</td>
+<td>
+    <input type="number" 
+           value="${row.eng}" 
+           id="eng_${row.id}" 
+           data-original="${row.eng}" 
+           min="0" 
+           max="35" 
+           oninput="if (this.value.length > 2) { alert('يرجى إدخال رقم مكون من رقمين كحد أقصى.'); this.value = this.value.slice(0, 2); }">
+</td>
+<td>
+    <input type="number" 
+           value="${row.fyz}" 
+           id="fyz_${row.id}" 
+           data-original="${row.fyz}" 
+           min="0" 
+           max="35" 
+           oninput="if (this.value.length > 2) { alert('يرجى إدخال رقم مكون من رقمين كحد أقصى.'); this.value = this.value.slice(0, 2); }">
+</td>
+<td>
+    <input type="number" 
+           value="${row.kims}" 
+           id="kims_${row.id}" 
+           data-original="${row.kims}" 
+           min="0" 
+           max="35" 
+           oninput="if (this.value.length > 2) { alert('يرجى إدخال رقم مكون من رقمين كحد أقصى.'); this.value = this.value.slice(0, 2); }">
+</td>
+<td>
+    <input type="number" 
+           value="${row.ahya}" 
+           id="ahya_${row.id}" 
+           data-original="${row.ahya}" 
+           min="0" 
+           max="35" 
+           oninput="if (this.value.length > 2) { alert('يرجى إدخال رقم مكون من رقمين كحد أقصى.'); this.value = this.value.slice(0, 2); }">
+</td>
+
+
                     `;
 
                     tableBody.appendChild(newRow);
                 });
             });
-    }
-    function showTable() {
+        }
+        function showTable() {
             const classFilterValue = document.getElementById('classFilter').value;
             const subjectFilterValue = document.getElementById('subjectFilter').value;
 
@@ -413,17 +487,26 @@
             })
             const numberInputs = document.querySelectorAll('input[type="number"]');
 
+function validateValue(input) {
+    if (input.value < 0) {
+        input.value = 0; 
+        showMessage('يرجى إدخال رقم موجب فقط.');
+    } else if (input.value > 35) {
+        input.value = 35; 
+        showMessage('الرجاء التأكد من الدرجة.');
+    }
+}
+
+function showMessage(message) {
+    alert(message); // يمكنك تعديل هذا الجزء لعرض الرسالة بطريقة أفضل
+}
+
 numberInputs.forEach(input => {
     input.addEventListener('input', function() {
-        // تحقق من القيمة المدخلة
-        if (this.value < 0) {
-            this.value = 0; // تعيين القيمة إلى 0 إذا كانت سالبة
-            alert('يرجى إدخال رقم موجب فقط.');
-        }
+        validateValue(this);
     });
 
     input.addEventListener('keydown', function(event) {
-        // منع إدخال الأرقام السالبة أو أي حرف غير الأرقام
         if (event.key === '-' || event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
             event.preventDefault();
         }
@@ -434,24 +517,29 @@ numberInputs.forEach(input => {
         if (!/[0-9]/.test(event.key) && event.key !== 'Backspace' && event.key !== 'Tab') {
             event.preventDefault();
         }
-         // تحقق من القيمة الحالية + الرقم المدخل
-         const newValue = this.value + event.key;
-        if (parseInt(newValue) > 35) {
-            event.preventDefault(); // منع إدخال الرقم إذا كان أكبر من 35
-            alert('الحد الأقصى للدرجة هو 35.');
-        }
-        });
 
-    input.addEventListener('blur', function() {
-        // تحقق من القيمة عند فقدان التركيز
-        if (this.value > 35) {
-            alert('الحد الأقصى للدرجة هو 35.');
-            this.value = 35; // تعيين القيمة إلى 35 إذا كانت أكبر من 35
-            this.focus(); // إعادة التركيز على الخلية
+        // تحقق من طول القيمة الجديدة بعد إدخال الرقم
+        const newValue = this.value + event.key;
+
+        // منع إدخال أرقام أكبر من عددين
+        if (newValue.length > 2) {
+            event.preventDefault();
+            showMessage('يرجى إدخال رقم مكون من رقمين كحد أقصى.');
+        }
+
+        // منع إدخال أرقام أكبر من 35
+        if (parseInt(newValue) > 35) {
+            event.preventDefault();
+            showMessage('الرجاء التأكد من الدرجة .');
         }
     });
-});
-    }
 
+    input.addEventListener('blur', function() {
+        validateValue(this);
+    });
+});
+
+
+        }
     window.onload = loadData; // Load data when the page loads
 </script>
