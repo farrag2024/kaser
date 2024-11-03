@@ -484,7 +484,15 @@
                 } else {
                     alert('فشل في تحديث بعض السجلات.');
                 }
-            })
+                     // تحديث الصفحة بعد العملية
+            location.reload();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('loadingMessage').style.display = 'none';
+            alert('حدث خطأ أثناء حفظ البيانات.');
+        });
+              }
             const numberInputs = document.querySelectorAll('input[type="number"]');
 
 function validateValue(input) {
@@ -538,8 +546,6 @@ numberInputs.forEach(input => {
         validateValue(this);
     });
 });
-
-
         }
     window.onload = loadData; // Load data when the page loads
 </script>
