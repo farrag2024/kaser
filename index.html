@@ -6,6 +6,20 @@
     <title>تسجيل درجات الاختبارات القصيرة</title>
     <link rel="icon" href="9999.png" type="image/png">
     <style>
+        .exit-button {
+        background-color: red; /* لون الخلفية */
+        color: white; /* لون النص */
+        border: none; /* إزالة الحدود */
+        padding: 10px 20px; /* إضافة حشوة */
+        text-align: center; /* محاذاة النص */
+        text-decoration: none; /* إزالة التسطير */
+        display: inline-block; /* عرض الزر ككتلة */
+        font-size: 16px; /* حجم الخط */
+        margin-top: 20px; /* إضافة مسافة أعلى الزر */
+        cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق الزر */
+        border-radius: 5px; /* زوايا دائرية */
+        font-weight: bold;  
+    }
         body {
             background-image: url('222.jpg'); /* إذا كانت الصورة في مجلد فرعي */
             background-size: cover;
@@ -268,10 +282,13 @@
             <!-- Data will be populated here -->
         </tbody>
     </table>
-
+    <button onclick="closePage()" class="exit-button">خروج</button>
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbztCJGQzunQW6HJen1ggtgZ-IlQISvqzQ85_7_g0H3UmJM_Ya28fFiGIu1-922Gmiej/exec';
-
+   
+    function closePage() {
+        window.close(); // يغلق الصفحة
+      }
     function loadData() {
         fetch(scriptURL)
             .then(response => response.json())
@@ -484,7 +501,7 @@
                 } else {
                     alert('فشل في تحديث بعض السجلات.');
                 }
-                     // تحديث الصفحة بعد العملية
+                 // تحديث الصفحة بعد العملية
             location.reload();
         })
         .catch(error => {
@@ -493,6 +510,7 @@
             alert('حدث خطأ أثناء حفظ البيانات.');
         });
               }
+          
             const numberInputs = document.querySelectorAll('input[type="number"]');
 
 function validateValue(input) {
@@ -546,6 +564,8 @@ numberInputs.forEach(input => {
         validateValue(this);
     });
 });
-        }
+
+
+        
     window.onload = loadData; // Load data when the page loads
 </script>
